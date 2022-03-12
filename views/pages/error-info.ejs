@@ -1,0 +1,28 @@
+<!-- views/pages/error-info.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ("../partials/header") %>
+    </head>
+<body class="container">
+    <main>
+        <div >
+            <h2>Contact Info</h2>
+        </div>
+        <div class="contact-info">
+           <table cellspacing="30">
+                <tr><td><h4><%=error.name + "   (" + error.nameError + ")"%></h4></td> <td><h4><%=error.contact + "   (" + error.contactError + ")"%></h4></td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <center>
+            <%- include ("../partials/footer") %>
+        </center>
+    </footer>
+    
+</body>
+</html>

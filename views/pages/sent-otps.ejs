@@ -1,0 +1,44 @@
+<!-- views/pages/sent-otps.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ("../partials/header") %>
+    </head>
+<body class="container">
+    <main>
+        <div >
+            <h2>Sent OTPs</h2>
+        </div>
+        <div class="contacts-div">
+            <table border="1">
+                <tr>
+                     <td><b>Name</b></td>
+                     <td><b>Time</b></td>
+                     <td><b>OTP</b></td>
+                </tr>
+                
+                <% for(var i=0; i < sentOTP.length; i++) { %>
+                    <script>
+                    <%= name = sentOTP[i].Name%>
+                    <%= time = sentOTP[i].Time%>
+                    <%= text = sentOTP[i].Body%>
+                    </script>
+                   <tr>
+                     <td><%=name%></td>
+                     <td><%=time%></td>
+                     <td><%=text%></td>
+                   </tr>
+                <% } %>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <center>
+            <%- include ("../partials/footer") %>
+        </center>
+    </footer>
+    
+</body>
+</html>

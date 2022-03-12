@@ -1,0 +1,40 @@
+<!-- views/pages/contact-info.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ("../partials/header") %>
+    </head>
+<body class="container">
+    <main>
+        <div class="heading">
+            <h2>Contact Info</h2>
+        </div>
+
+        <style>
+            .heading{
+                margin-bottom: 15px;
+            }
+        </style>
+        <div class="contact-info">
+           
+               <h4><%=record.Name + " " + record.Surname%></h4>
+               <hr>
+
+               <h4><%=record.Contact%></h4>
+                <div>
+                    <a href="/message-compose.ejs?<%=record.Contact%>"><button class="btn-info"><b>Send Message</b></button></a>
+                </div>
+               
+           
+        </div>
+    </main>
+
+    <footer>
+        <center>
+            <%- include ("../partials/footer") %>
+        </center>
+    </footer>
+    
+</body>
+</html>

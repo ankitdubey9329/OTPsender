@@ -1,0 +1,22 @@
+{
+  "name": "contact-app",
+  "version": "0.0.1",
+  "description": "This project aims to develop a web app that can send an OTP (via SMS) to a list of contacts, one at a time.",
+  "main": "OTPserver.js",
+  "author": "Tapan Sharma",
+  "dependencies": {
+    "body-parser": "latest",
+    "bootstrap": "^5.1.3",
+    "bunyan": "latest",
+    "ejs": "latest",
+    "express": "latest",
+    "morgan": "latest",
+    "nodemon": "^2.0.15",
+    "request": "latest",
+    "twilio": "^2.1.1",
+    "url": "latest"
+  },
+  "scripts": {
+    "start": "nodemon app/otpserver.js"
+  }
+}
