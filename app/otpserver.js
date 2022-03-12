@@ -10,6 +10,8 @@ let ejs = require('ejs');
 let path = require('path');
 let app = express();
 
+
+
 // Using resources from other modules, static files available locally
 let contactList = require(__dirname + '/statics/contactlist.json');
 let fetchDetails = require(__dirname + '/utils/fetchdetails.js');
@@ -104,5 +106,5 @@ app.get('/sent-otps.ejs', function(req, res) {
     res.render('pages/sent-otps', {sentOTP:sentOTP});
 });
 
-app.listen(process.env.port || 3000);
+app.listen(process.env.PORT || 3000);
 logger.info('OTP app listening on 3000.');
