@@ -104,5 +104,5 @@ app.get('/sent-otps.ejs', function(req, res) {
     res.render('pages/sent-otps', {sentOTP:sentOTP});
 });
 
-app.listen(3000);
+app.listen(process.env.port || 3000);
 logger.info('OTP app listening on 3000.');
