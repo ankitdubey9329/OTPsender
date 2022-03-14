@@ -1,8 +1,14 @@
 let fs = require('fs');
 
+if(process.env.NODE_ENV!=="production"){
+    require("dotenv").config()
+}
+
 let fetchDetails = require('./../utils/fetchdetails.js');
 let logger = require(__dirname + '/../logger/jsLogger.js');
 // let otpAuth = require('./otpAuth.json');
+
+
 let twilio = require('twilio');
 const dotenv=require('dotenv').config();
 
