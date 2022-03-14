@@ -2,8 +2,14 @@ let fs = require('fs');
 
 let fetchDetails = require('./../utils/fetchdetails.js');
 let logger = require(__dirname + '/../logger/jsLogger.js');
-let otpAuth = require('./otpAuth.json');
+// let otpAuth = require('./otpAuth.json');
 let twilio = require('twilio');
+const dotenv=require('dotenv').config();
+
+const sid=process.env.SID;
+const token=process.env.TOKEN;
+const number=process.env.NUMBER;
+
 
 //This module will authenticate credentials of using Twilio API and finally send a text message to
 //concerned contact number.
@@ -11,7 +17,7 @@ let twilio = require('twilio');
 module.exports = {
 	sendmessage : function(messageJson, callback) { 
 		try{
-			var client = new twilio.RestClient(otpAuth['TWILIO_ACCOUNT_SID'], otpAuth['TWILIO_AUTH_TOKEN']);
+			var client = new twilio.RestClient(sid, token);
 		} catch(error) {
 			logger.error("Could not create Twilio messaging REST client due to : " + error);
 			callback("error");
@@ -22,7 +28,7 @@ module.exports = {
 			try{
 				client.sms.messages.create({
 				    to:messageJson["contact"],
-				    from:otpAuth['TWILIO_NUMBER'],
+				    from:number,
 				    body:messageJson["text_message"]
 				}, function(error, message) {
 				    if (!error) {
